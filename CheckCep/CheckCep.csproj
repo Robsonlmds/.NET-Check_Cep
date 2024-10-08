@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Models\SendEmail.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Aspose.Email" Version="24.9.0" />
     <PackageReference Include="MailKit" Version="4.8.0" />
+    <PackageReference Include="mdoc" Version="5.9.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SendGrid" Version="9.29.3" />

@@ -1,9 +1,7 @@
-﻿using Aspose.Email;
-using CheckCep.Models;
+﻿using CheckCep.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net;
-using System.Net.Mail;
 
 namespace CheckCep.Controllers
 {
@@ -20,14 +18,11 @@ namespace CheckCep.Controllers
             _client.BaseAddress = baseAddress;
         }
 
-
         [HttpGet]
         public IActionResult Index()
         {
             return View("HomeSite");
-
         }
-
 
         [HttpPost]
         public IActionResult Index(string cep)
@@ -50,61 +45,25 @@ namespace CheckCep.Controllers
                 /* streamDados.Close();
                  resposta.Close();*/
 
-                User user = new User();
-
-
             }
-
-
-            var outlook = new Email("smtp.office365.com", "", ENV.PASSWORD);
-
-            outlook.SendEmail(
-            emailsTo: new List<string>
-            {
-                ""
-            },
-            subject: "Teste", body: "Segue Anexo" );
 
             ViewBag.cep = take;
 
             return View("HomeSite");
         }
-/*
-        public static void SendEmail(User user)
+
+        [HttpPost]
+        [ActionName("MethodEmail")]
+        public IActionResult MethodEmail(string email)
         {
-            Aspose.Email.MailMessage message = new Aspose.Email.MailMessage();
+            email.ToString();
+            User user = new User();
+            user.Email = email;
 
-            message.Subject = "New message created by Aspose.Email for .NET";
-            message.Body = "This is the body of the email.";
-            
-            message.From = new Aspose.Email.MailAddress(user.Email, "TESTnoME", false);
+            ViewBag.email = email;
 
-            message.To.Add(new Aspose.Email.MailAddress("robsonlmdsgoo@gmail.com", "Recipient 1", false));
-
-            message.Save("EmailMessage.eml", SaveOptions.DefaultEml);
-            message.Save("EmailMessage.emlx", SaveOptions.CreateSaveOptions(MailMessageSaveType.EmlxFormat));
-            message.Save("EmailMessage.msg", SaveOptions.DefaultMsgUnicode);
-            message.Save("EmailMessage.mhtml", SaveOptions.DefaultMhtml);
-        }*/
-
-
-
-
-        /*static async Task ExecuteEmail(User user, Address take)
-        {
-            var apiKey = Environment.GetEnvironmentVariable("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");
-            var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("robsonlmdsgoo@gmail.com", "Example User");
-            var subject = "CheckCep - Seu ENDEREÇO";
-            var to = new EmailAddress(user.Email, "Client");
-            var plainTextContent = take.ToString();
-            string html = plainTextContent;
-            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, html);
-            var response = await client.SendEmailAsync(msg);
-        }*/
-
-
-
+            return View("HomeSite");
+        }
 
     }
 }
