@@ -1,0 +1,210 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Tenho Interesse</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(231, 231, 231);
+        }
+
+        .ak-content {
+            margin: auto;
+            background-color: rgb(255, 255, 255);
+        }
+
+            .ak-content a {
+                color: rgb(204, 0, 0);
+            }
+
+        .ak-container {
+            width: 100%;
+            background-color: rgb(231, 231, 231);
+        }
+
+        .ak-content table tr td {
+            font-family: arial, helvetica, sans-serif;
+            font-size: 16px;
+            color: rgb(74, 66, 60);
+        }
+
+        .ak-button {
+            border-radius: 3px;
+            background-color: rgb(109, 198, 221);
+            border-collapse: separate !important;
+        }
+
+            .ak-button tr td {
+                padding: 10px;
+            }
+
+            .ak-button a {
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                font-size: 18px;
+            }
+
+        .ak-line {
+            border-top: 1px solid rgb(204, 204, 204);
+        }
+
+        .ak-box {
+            border: 1px solid rgb(204, 204, 204);
+        }
+
+        img {
+            border: 0px none;
+        }
+
+        .ak-content-assinatura {
+            padding: 0px 25px 25px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .ak-footer {
+            color: rgb(74, 66, 60);
+            font-size: 13px;
+            border-top: 1px solid rgb(218, 218, 218);
+        }
+
+            .ak-footer td {
+                padding: 20px 25px;
+            }
+
+        .ak-column-left img {
+            max-width: 100% !important;
+        }
+
+        .ak-column-right img {
+            max-width: 100% !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .ak-content {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            body, table, td, a, li, blockquote {
+                margin: 0px;
+            }
+
+            table {
+                border-collapse: collapse;
+                table-layout: fixed;
+            }
+
+            .layout-email {
+                width: 100% !important;
+            }
+
+            .ak-content {
+                font-size: 18px;
+            }
+
+            .ak-button {
+                margin: auto;
+                max-width: 600px !important;
+            }
+
+                .ak-button a {
+                    font-size: 18px;
+                    display: block !important;
+                }
+
+            .ak-image {
+                max-width: 100% !important;
+            }
+
+            #ak-columns {
+                width: 100% !important;
+            }
+
+            .ak-column-container {
+                clear: both;
+                width: 100% !important;
+            }
+
+            .ak-column-left {
+                line-height: 100% !important;
+            }
+
+            .ak-column-right {
+                line-height: 100% !important;
+            }
+
+                .ak-column-right img {
+                    margin-top: 10px;
+                }
+
+            .ak-logo {
+                height: auto;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+                .ak-logo td {
+                    padding: 25px;
+                }
+
+            .ak-footer td {
+                font-size: 16px !important;
+            }
+
+            .ak-email-button {
+                width: 100%;
+            }
+        }
+
+        .my-content td {
+            padding: 20px;
+        }
+
+        .my-content-assinatura td {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <base target="_blank">
+    <table width="100%" class="ak-container" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="600" class="ak-content" cellpadding="0" cellspacing="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td style="text-align: left; padding: 20px 50px; font-size: 0px;"><img ak:edit="image" src="https://cronos-media.sesisenaisp.org.br//api/media/1-0/files?img=img_56_240819_69823817-5198-4ab2-b46c-876cc5041310_o.png" class="ak-image" style="width: 500px; max-width: 500px;" data-pin-nopin="true" alt="" width="500"></td></tr></tbody></table>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding: 30px 50px 20px;">
+                                                    <p>Olá, @Model.pes_nome</p>
+                                                    <br />
+                                                    <p>Que bom que você se interessou pelos nossos materiais de divulgação do <strong>Programa Alimentar o Futuro</strong>.</p>
+                                                    <br />
+                                                    <p>@Model.Conteudo.LinhaFina</p>
+                                                    <br />
+                                                    <p>Abrace essa causa e espalhe a ideia na sua empresa.</p>
+                                                    <br />
+                                                    <p><u><a href="@Model.conteudo.linkdownload">Faça o download</a></u></p>
+                                                    <br />
+                                                    <p>Obrigada e volte sempre que quiser!</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td style="padding: 20px;">   <table class="ak-line" width="100%" style="min-width: 100% !important; width: 100%; border-top: 1px solid #CCCCCC;"><tbody><tr><td><span></span></td></tr></tbody></table></td></tr></tbody></table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

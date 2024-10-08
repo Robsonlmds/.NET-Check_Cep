@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Address";
+    var add = ViewBag.cep as Address;
+    var complemento = "";
+}
+
+<html lang="pt-br">
+
+    <div class="text-center">
+        <h1 class="display-4">CheckCep</h1>
+    </div>
+     
+    <div class="text-center mt-5">
+
+        <form method="post" class="row g-2">
+
+            <div class="col-11">
+                <label for="inputCep" class="visually-hidden">CEP</label>
+                <input type="number" class="form-control" id="" name="cep" placeholder="CEP, Somente números"/>
+            </div>
+
+             <div class="col-11">
+                <label for="inputEmail" class="visually-hidden">Email</label>
+                <input type="email" class="form-control" id="" name="User.Email" placeholder="Email"/>
+            </div>
+
+            <div class="col-1">
+                <button class="btn btn-outline-dark" type="submit">Check</button>
+            </div>
+
+        </form>
+
+    </div>
+
+        @if(add != null)
+        {
+
+            <div class="text-center mt-5">
+                <p>CEP: @add.cep</p>
+                <p>Estado: @add.uf</p>
+                <p>Cidade: @add.localidade</p>
+                <p>Rua: @add.logradouro</p>
+                <p>
+                    @if(add.complemento == "")
+                    {
+                        <p>Complemento: Não tem complemento</p>
+                    }
+                    else{
+                        <p>Complemento: @add.complemento</p>
+                    }</p>
+            </div>
+
+            <div class="mt-5">
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="emailCheckYes" id="emailCheckYes" value="emailCheckYes" checked>
+                    <label class="form-check-label" for="emailCheckYes">
+                        Enviar para o Email
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="emailCheckNo" id="emailCheckNo" value="emailCheckNo" checked>
+                    <label class="form-check-label" for="emailCheckNo">
+                        NÃO Enviar para o Email
+                    </label>
+                </div>
+
+            </div>
+        }
+    
+
+
+</html>
+    
