@@ -8,20 +8,22 @@ namespace CheckCep.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View("HomeSite");
+            return View("Index", "Address");
         }
 
         [HttpPost]
-        [ActionName("MethodEmail")]
-        public IActionResult MethodEmail(string email)
+        public IActionResult Index (string email,string name)
         {
-            email.ToString();
             User user = new User();
+
             user.Email = email;
+            user.Name = name;
 
             ViewBag.email = email;
 
-            return Ok();
+            return RedirectToAction("Index" , "Thanks");
+
         }   
     }
+        
 }

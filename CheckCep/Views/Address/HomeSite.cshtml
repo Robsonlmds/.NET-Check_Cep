@@ -50,8 +50,8 @@
         @* ///////////////////////////////////// - BUTTONS - ///////////////////////////////////// *@
 
         <div class="mt-5 text-center">
-            <button id="btnSendEmail" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EmailModal" data-bs-whatever="@Model"> Enviar o endereço para seu Email @Model </button>
-            <button id="btnShowModal" class="btn btn-outline-dark" type="button" onclick="copybutton()" data-bs-toggle="modal" data-bs-target="#CopyModal"> Copiar endereço </button>
+            <button id="btnSendEmail" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal" data-bs-whatever="@Model"> Enviar o endereço para seu Email @Model </button>
+            <button id="btnShowModal" class="btn btn-outline-dark" type="button" onclick="copybutton()" data-bs-toggle="modal" data-bs-target="#copyModal"> Copiar endereço </button>
         </div>
 
         @* ///////////////////////////////////// - FIM - BUTTONS - ///////////////////////////////////// *@
@@ -59,7 +59,7 @@
 
     @* ///////////////////////////////////// - MODALS - ///////////////////////////////////// *@
 
-    <div class="modal fade" id="EmailModal" tabindex="-1" aria-labelledby="EmailModal" aria-hidden="true">
+    <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -68,16 +68,16 @@
                 </div>
 
                 <div class="modal-body">
-                <form method="post" action="@Url.Action("MethodEmail","Email")">
+                <form method="post" action="@Url.Action("Index","Email")">
 
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label"> Seu nome: </label>
-                            <input type="text" class="form-control" id="recipient-name" name="name" />
+                            <input type="text" class="form-control" id="recipient-name" name="name" placeholder="Nome Sobrenome"/>
                         </div>
 
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label"> Email: </label>
-                            <input type="email" class="form-control" id="message-text" name="email" />
+                            <input type="email" class="form-control" id="message-text" name="email" placeholder="email@mail.com"/>
                         </div>
 
                         <div class="modal-footer">
@@ -91,40 +91,49 @@
         </div>
     </div>
 
-
-    <div class="modal fade" id="CopyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal fade" id="copyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="color: blue">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <div class="modal-body text-center">
+                <strong> Endereço copiado com sucesso! </strong>
                 </div>
-                <div class="modal-body">
-                    Endereço copiado com sucesso!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Fechar </button>
-                </div>
+
             </div>
         </div>
     </div>
 
     @* ///////////////////////////////////// - FIM - MODALS - ///////////////////////////////////// *@
 
-    <footer>
-       
-    </footer>
 
-    <script>
+    @section Scripts{
+        
+        <script>
 
-        function copybutton() {
-            let copyAll = document.getElementById("inputDNone");
+            function copybutton() {
+                let copyAll = document.getElementById("inputDNone");
 
-            copyAll.select();
+                copyAll.select();
 
-            navigator.clipboard.writeText(copyAll.value);
-            document.execCommand("copy");
-        }
+                navigator.clipboard.writeText(copyAll.value);
+                document.execCommand("copy");
+            }
 
-    </script>
+
+            $(function () {
+                $('#copyModal').on('show.bs.modal', function () {
+                    var myCopyModal = $(this);
+                    clearTimeout(myCopyModal.data('hideInterval'));
+                    myCopyModal.data('hideInterval', setTimeout(function () {
+                        myCopyModal.modal('hide');
+                    }, 3000));
+                });
+            });
+
+
+        </script>
+
+    }
+
 
 </html>

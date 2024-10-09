@@ -18,7 +18,7 @@ namespace CheckCep.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult README()
         {
             return View();
         }

@@ -18,11 +18,13 @@ namespace CheckCep.Controllers
             _client.BaseAddress = baseAddress;
         }
 
+
         [HttpGet]
         public IActionResult Index()
         {
             return View("HomeSite");
         }
+
 
         [HttpPost]
         public IActionResult Index(string cep)
@@ -40,11 +42,6 @@ namespace CheckCep.Controllers
                 object objResponse = reader.ReadToEnd();
 
                 take = JsonConvert.DeserializeObject<Address>(objResponse.ToString());
-
-                /*Console.WriteLine(take.logradouro + " " + take.complemento + " " + take.localidade + " " + take.uf + " " + take.cep);*/
-                /* streamDados.Close();
-                 resposta.Close();*/
-
             }
 
             ViewBag.cep = take;
@@ -52,18 +49,6 @@ namespace CheckCep.Controllers
             return View("HomeSite");
         }
 
-        [HttpPost]
-        [ActionName("MethodEmail")]
-        public IActionResult MethodEmail(string email)
-        {
-            email.ToString();
-            User user = new User();
-            user.Email = email;
-
-            ViewBag.email = email;
-
-            return View("HomeSite");
-        }
 
     }
 }

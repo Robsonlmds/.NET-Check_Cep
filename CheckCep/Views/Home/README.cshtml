@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "README";
+}
+<h1>@ViewData["README"]</h1>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=7.0">
+
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="text-center">CheckCep - Sobre</h1>
+
+            <h2>Descrição</h2>
+            <p>O CheckCep é uma aplicação ASP.NET Core MVC que permite aos usuários consultar o endereço completo de um CEP utilizando a API ViaCEP. Além de exibir as informações do endereço, a aplicação possibilita copiar o endereço para a área de transferência ou enviá-lo diretamente para um email fornecido pelo usuário.</p>
+
+            <h2>Funcionalidades</h2>
+            <ul>
+                <li>Consulta de endereço pelo CEP (usando a API ViaCEP).</li>
+                <li>Exibição das informações detalhadas do endereço, como CEP, rua, cidade, estado, e complemento.</li>
+                <li>Envio das informações de endereço para o email do usuário.</li>
+                <li>Possibilidade de copiar o endereço para a área de transferência com um botão interativo.</li>
+            </ul>
+
+            <h2>Tecnologias Utilizadas</h2>
+            <ul>
+                <li>ASP.NET Core MVC</li>
+                <li>C#</li>
+                <li>API ViaCEP: Serviço público que permite consulta de CEPs e dados de endereço no Brasil.</li>
+                <li>Bootstrap 5: Framework para estilização responsiva e componentes como modais e botões.</li>
+                <li>JavaScript: Para interatividade na cópia de endereços e controle de modais.</li>
+                <li>Newtonsoft.Json: Biblioteca para serialização e desserialização de objetos JSON.</li>
+            </ul>
+
+            <h2>Estrutura dos Arquivos</h2>
+            <h5>AddressController.cs</h5>
+            <p>Este controlador gerencia as requisições de busca de endereço e manipulação do CEP. A busca é feita através de uma requisição HTTP para a API ViaCEP, e as informações são desserializadas em um objeto do tipo Address e enviadas para a view.</p>
+
+            <h5>EmailController.cs</h5>
+            <p>Este controlador é responsável por capturar o email fornecido pelo usuário e simular o envio do endereço.</p>
+
+            <h5>HomeSite.cshtml</h5>
+            <p>Arquivo da view principal, onde o usuário insere o CEP, visualiza o endereço e interage com os botões para enviar o endereço por email ou copiá-lo.</p>
+
+
+            <h2>Como Usar</h2>
+            <ol>
+                <li>Na página inicial, insira um CEP válido no campo "CEP" e clique em "Check".</li>
+                <li>Se o CEP for válido, as informações do endereço aparecerão.</li>
+                <li>Você pode copiar o endereço para a área de transferência ou clicar no botão para enviar o endereço para o seu email.</li>
+            </ol>
+
+            <h2>Exemplo de Resposta</h2>
+            <p>Quando um CEP válido é inserido, o sistema exibe:</p>
+            <ul>
+                <li><strong>CEP:</strong> 01001-000</li>
+                <li><strong>Estado:</strong> SP</li>
+                <li><strong>Cidade:</strong> São Paulo</li>
+                <li><strong>Rua:</strong> Praça da Sé</li>
+                <li><strong>Complemento:</strong> Não tem complemento (ou outro valor, se aplicável)</li>
+            </ul>
+
+        </div>
+       
+    </body>
+</html>
