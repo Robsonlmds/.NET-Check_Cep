@@ -5,9 +5,6 @@
   </a>
 </div>
 
-
-## CheckCep - Sobre
-
 ### Descrição
 O CheckCep é uma aplicação ASP.NET Core MVC que permite aos usuários consultar o endereço completo de um CEP utilizando a API ViaCEP. Além de exibir as informações do endereço, a aplicação possibilita copiar o endereço para a área de transferência ou enviá-lo diretamente para um email fornecido pelo usuário.
 
