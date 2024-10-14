@@ -3,6 +3,11 @@
     <img src="https://readme-typing-svg.demolab.com?font=Silkscreen&size=20&duration=1500&pause=1000&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=700&height=110&lines=CheckCep" 
     alt="Typing SVG" />
   </a>
+
+<h1 align="center">
+  <img alt="videoSite" title="videoSite" src="CheckCep/assets/checkcep.gif"/>
+</h1>
+
 </div>
 
 ### Descrição
