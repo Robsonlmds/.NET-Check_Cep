@@ -14,8 +14,7 @@
         <form method="post" class="row g-2">
 
             <div class="col-11">
-                <label for="inputCep" class="visually-hidden">CEP</label>
-                <input type="number" class="form-control" id="myInput" name="cep" placeholder="CEP, Somente números" />
+                <input type="text" class="form-control" name="cep" placeholder="CEP, Somente números ex: 12345678" id="myInput" maxlength="8" />
             </div>
 
             <div class="col-1">
@@ -131,9 +130,15 @@
             });
 
 
+            $(document).ready(function () {
+                $("#myInput").keyup(function () {
+                    $("#myInput").val(this.value.match(/[0-9]*/));
+                });
+            });
+
+
         </script>
 
-    }
-
+}
 
 </html>

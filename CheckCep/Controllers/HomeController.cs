@@ -6,15 +6,28 @@ namespace CheckCep.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IEmailSender _emailSender;
         private readonly ILogger<HomeController> _logger;
+
+
+        public HomeController(EmailSender emailSender)
+        {
+            this._emailSender = emailSender;
+        }
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var receiver = "Robsonlmdsgoo@gmial.com";
+            var subject = "Test";
+            var message = "Hello";
+
+            await _emailSender.SendEmailAsync(receiver, subject, message);
+
             return View();
         }
 

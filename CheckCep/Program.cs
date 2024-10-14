@@ -1,4 +1,10 @@
+using CheckCep;
+using CheckCep.Models;
+using NuGet.Versioning;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 builder.Services.AddControllersWithViews();
 
