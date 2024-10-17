@@ -26,7 +26,7 @@ namespace CheckCep.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost]  
         public IActionResult Index(string cep)
         {
             var requisicaoWeb = WebRequest.CreateHttp(baseAddress + cep + "/json/");
